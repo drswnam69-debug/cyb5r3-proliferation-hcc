@@ -1,0 +1,2 @@
+C_base,C_base_lo,C_base_hi,C_full,C_full_lo,C_full_hi,dC,dC_lo,dC_hi,B,comparison,published_dC_without_proliferation
+0.685856676404881,0.641388615317453,0.747899059433707,0.698659563498883,0.659743382112319,0.757315697161792,0.0128028870940025,-0.00302677589437945,0.0424116166248023,1000,adding CYB5R3 to a model that already contains proliferation and grade,0.0047

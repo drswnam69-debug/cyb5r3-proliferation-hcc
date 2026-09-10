@@ -1,0 +1,6 @@
+cache/
+.DS_Store
+.Rhistory
+.RData
+analysis/results/
+analysis/figures/

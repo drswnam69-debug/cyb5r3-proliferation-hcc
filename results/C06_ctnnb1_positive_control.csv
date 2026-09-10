@@ -1,0 +1,3 @@
+control_gene,n_mut,n_wt,median_mut,median_wt,p,passes
+GLUL,93,265,17.5898,13.9591,0,TRUE
+LGR5,93,265,9.4881,3.1849,0,TRUE

@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software or these results, please cite it as below."
+title: "Tumor proliferation masks the prognostic association of CYB5R3 in hepatocellular carcinoma: pre-registered analysis code and results"
+authors:
+  - family-names: "Nam"
+    given-names: "Soon Woo"
+    orcid: "https://orcid.org/0000-0001-5562-4775"
+    affiliation: "Hepatobiliary Unit, Division of Gastroenterology, Department of Internal Medicine, Incheon St. Mary's Hospital, College of Medicine, The Catholic University of Korea, Seoul, Republic of Korea"
+version: "1.0.0"
+date-released: "2026-09-10"
+license: MIT
+keywords:
+  - hepatocellular carcinoma
+  - CYB5R3
+  - prognosis
+  - cell proliferation
+  - confounding
+  - molecular subclass
+  - pre-registration
+abstract: >-
+  Pre-registered R analysis of CYB5R3 in hepatocellular carcinoma using TCGA-LIHC
+  and GSE14520. The pre-registered hypothesis, that Hoshida molecular subclass
+  explains the discordance between histologic grade and survival, is rejected on
+  all four counts. Labelled post hoc analyses then show that grade is not
+  prognostic in TCGA-LIHC and that the grade trend tracks proliferation, and that
+  proliferation negatively confounds the association between CYB5R3 and survival.
+  That finding is tested in GSE14520 under a rule fixed in advance. This repository
+  contains the decision rules, the analysis scripts, the frozen subclass templates,
+  every result file, the run logs and the manuscript figures.

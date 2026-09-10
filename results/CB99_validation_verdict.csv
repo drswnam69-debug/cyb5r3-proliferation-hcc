@@ -1,0 +1,2 @@
+gse14520_anchor_ok,HR_without_proliferation,HR_with_proliferation,replicated,reading,proliferation_adverse_TCGA,proliferation_adverse_GSE14520,negative_correlation_both
+TRUE,1.24394120817337,1.31075782918234,TRUE,"REPLICATED. Proliferation suppresses the CYB5R3 hazard ratio in an independent cohort, as in TCGA-LIHC.",TRUE,TRUE,TRUE

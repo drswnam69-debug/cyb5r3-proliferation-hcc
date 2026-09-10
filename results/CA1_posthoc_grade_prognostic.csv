@@ -1,0 +1,3 @@
+model,term,n,events,HR,CI_low,CI_high,p,lrt_grade_factor,reading
+POST HOC: OS ~ grade (unadjusted),grade_ord,339,114,1.13315407492197,0.881332023219937,1.45692897078793,0.3296341740981,,
+POST HOC: OS ~ grade + age + sex + stage,grade_ord,339,114,1.19892984624231,0.925118776917093,1.55378186247691,0.170199328405566,0.462104858619071,Grade is NOT prognostic in this cohort. The discordance dissolves: grade and survival are decoupled here.

@@ -1,0 +1,11 @@
+gene,used,reason
+COL1A1,TRUE,present on both platforms
+FN1,TRUE,present on both platforms
+PDGFRB,TRUE,present on both platforms
+CD3E,TRUE,present on both platforms
+CD2,TRUE,present on both platforms
+CSF1R,TRUE,present on both platforms
+ITGAM,TRUE,present on both platforms
+HLA-DRA,TRUE,present on both platforms
+CD68,FALSE,present on only one platform; would force missing values
+LYZ,FALSE,present on only one platform; would force missing values

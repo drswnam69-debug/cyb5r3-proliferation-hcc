@@ -1,0 +1,14 @@
+rule,value
+ntp_permutations,1000
+ntp_fdr_cut,0.2
+min_class_n,30
+s2_markers,"EPCAM, KRT19, MKI67, TOP2A"
+s3_markers,"ALB, CYP2E1, HNF1A, SERPINA1, TTR"
+markers_required,3
+ctnnb1_control,"GLUL, LGR5"
+h2_explained_if,attenuation >= 0.50 AND p(b2) > 0.05
+h2_independent_if,attenuation <  0.25 AND p(b2) < 0.05
+h3_marker_if,HR < 1.10 with 95% CI covering 1
+h3_independent_if,HR >= 1.15 with 95% CI excluding 1
+alpha,0.05
+multiplicity,BH across the H1/H2/H3/H4 family

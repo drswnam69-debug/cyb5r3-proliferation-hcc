@@ -1,0 +1,2 @@
+anchor,n,events,HR,CI_low,CI_high,p,published_HR,reproduced
+OS ~ CYB5R3(per SD) + age + sex + stage,341,116,1.21694262620171,1.00989888297669,1.4664333037993,0.0390664332941032,1.226,TRUE

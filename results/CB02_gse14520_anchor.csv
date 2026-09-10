@@ -1,0 +1,2 @@
+model,term,n,events,HR,CI_low,CI_high,p,published_HR,within_tolerance
+"GSE14520 ADJUSTED (age, sex, TNM)",z5,225,86,1.24394120817337,0.992286109923318,1.5594189154894,0.0583824614264488,1.244,TRUE

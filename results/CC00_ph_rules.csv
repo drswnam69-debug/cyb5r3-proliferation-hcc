@@ -1,0 +1,6 @@
+rule,value
+robust_if,HR >= 1.25 and 95% CI excludes 1 under BOTH strata() and tt()
+weakened_if,95% CI covers 1 under either specification
+strata_def,proliferation score tertiles; no PH assumption is placed on proliferation
+tt_def,"time-varying coefficient for the proliferation score, zp * log(time)"
+landmark,period split at 24 months

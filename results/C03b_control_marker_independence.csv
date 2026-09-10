@@ -1,0 +1,12 @@
+marker,role,in_template,independent
+EPCAM,S2 validity control,"",TRUE
+KRT19,S2 validity control,"",TRUE
+MKI67,S2 validity control,"",TRUE
+TOP2A,S2 validity control,"",TRUE
+ALB,S3 validity control,"",TRUE
+CYP2E1,S3 validity control,"",TRUE
+HNF1A,S3 validity control,"",TRUE
+SERPINA1,S3 validity control,"",TRUE
+TTR,S3 validity control,"",TRUE
+GLUL,CTNNB1 positive control,"",TRUE
+LGR5,CTNNB1 positive control,"",TRUE

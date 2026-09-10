@@ -1,0 +1,8 @@
+rule,value
+primary,"GSE14520: OS ~ CYB5R3(per SD) + age + sex + TNM, with and without the proliferation score"
+replication_declared_if,HR increases when proliferation is added AND the adjusted 95% CI excludes 1
+anchor_tolerance_HR,0.05
+min_genes_mapped,6
+prolif_genes,"MKI67, TOP2A, CCNB1, PCNA, BUB1, CCNA2, AURKA, RRM2"
+probe_rule,mean of all probes mapped to the gene symbol (same rule as the published pipeline)
+multiplicity,primary is one directional test; secondary analyses carry BH adjustment

@@ -1,0 +1,19 @@
+score,gene,note
+proliferation,MKI67,mean of gene-wise z scores
+proliferation,TOP2A,mean of gene-wise z scores
+proliferation,CCNB1,mean of gene-wise z scores
+proliferation,PCNA,mean of gene-wise z scores
+proliferation,BUB1,mean of gene-wise z scores
+proliferation,CCNA2,mean of gene-wise z scores
+proliferation,AURKA,mean of gene-wise z scores
+proliferation,RRM2,mean of gene-wise z scores
+composition,COL1A1,"PC1, 47.6% of variance, samples as observations"
+composition,FN1,"PC1, 47.6% of variance, samples as observations"
+composition,PDGFRB,"PC1, 47.6% of variance, samples as observations"
+composition,CD3E,"PC1, 47.6% of variance, samples as observations"
+composition,CD2,"PC1, 47.6% of variance, samples as observations"
+composition,CD68,"PC1, 47.6% of variance, samples as observations"
+composition,CSF1R,"PC1, 47.6% of variance, samples as observations"
+composition,ITGAM,"PC1, 47.6% of variance, samples as observations"
+composition,LYZ,"PC1, 47.6% of variance, samples as observations"
+composition,HLA-DRA,"PC1, 47.6% of variance, samples as observations"

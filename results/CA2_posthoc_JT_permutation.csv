@@ -1,0 +1,2 @@
+n,JT_statistic,p_permutation,nperm,note
+366,18228,0.007,10000,Replaces the normal-approximation p value; ties are present.

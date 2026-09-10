@@ -1,0 +1,6 @@
+step,n,note
+HiSeqV2 matrix: genes x samples,20530 x 423,log2(norm_count + 1); identical matrix to the published primary analysis
+Tumour samples (codes 01/02/03/05/06/07),373,""
+One sample per patient,371,""
+Merged with clinical and survival,371,""
+"PRIMARY ANALYSIS SET (complete age, sex, stage)",341,"deaths = 116; published set was n = 339, deaths = 114"

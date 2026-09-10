@@ -1,0 +1,5 @@
+rule,value
+status,"EXPLORATORY, not pre-specified; added after the TCGA-LIHC composition result was seen"
+consistent_if,adding composition on top of proliferation raises the CYB5R3 HR AND the 95% CI excludes 1
+min_genes,at least 6 of the stromal and immune markers must map to probes
+sign_note,the sign of a principal component is arbitrary and need not agree between cohorts; it is used as a covariate only
