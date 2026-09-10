@@ -16,7 +16,7 @@ This repository contains the analysis that resolves it.
 Hypotheses H1 to H4, the decision rules, the subclass assignment method and the validity
 controls were fixed in code before the data were examined. All four hypotheses failed.
 
-**Stage 2, post hoc.** Designed after those results were seen, and labelled POST HOC
+**Stage 2, post hoc.** Designed after those results were seen, and labeled POST HOC
 throughout. Histologic grade turns out not to be prognostic in TCGA-LIHC at all, so the
 discordance was apparent rather than real. The grade trend is a proliferation trend, and
 proliferation negatively confounds the association between CYB5R3 and survival: adjusting

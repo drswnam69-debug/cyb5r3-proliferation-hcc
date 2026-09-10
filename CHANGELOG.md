@@ -17,5 +17,5 @@ Contents at this release:
 - The pre-registration document, `PREREG_ProjectC_subtype.docx`.
 
 No results were changed after the pre-registration was fixed. Analyses added after
-the pre-registered tests were seen are labelled POST HOC in both the code and the
+the pre-registered tests were seen are labeled POST HOC in both the code and the
 output files.
