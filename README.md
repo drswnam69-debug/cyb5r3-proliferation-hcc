@@ -105,8 +105,8 @@ identifiable data are included here.
 
 ## Citation
 
-See `CITATION.cff`. The DOI assigned by Zenodo on publication of this record should be cited
-alongside the article.
+See `CITATION.cff`. Cite the concept DOI 10.5281/zenodo.22685965, which always resolves to
+the latest version of this record, alongside the article.
 
 ## License
 

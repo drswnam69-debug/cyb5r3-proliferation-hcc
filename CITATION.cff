@@ -9,6 +9,18 @@ authors:
 version: "1.0.0"
 date-released: "2026-09-10"
 license: MIT
+doi: "10.5281/zenodo.22685965"
+repository-code: "https://github.com/drswnam69-debug/cyb5r3-proliferation-hcc"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22685965"
+    description: "Concept DOI, always resolves to the latest version of this record"
+  - type: doi
+    value: "10.3390/ijms27177806"
+    description: "The earlier article that this work follows up"
+  - type: doi
+    value: "10.5281/zenodo.21987539"
+    description: "Analysis pipeline of the earlier article"
 keywords:
   - hepatocellular carcinoma
   - CYB5R3
@@ -21,7 +33,7 @@ abstract: >-
   Pre-registered R analysis of CYB5R3 in hepatocellular carcinoma using TCGA-LIHC
   and GSE14520. The pre-registered hypothesis, that Hoshida molecular subclass
   explains the discordance between histologic grade and survival, is rejected on
-  all four counts. Labelled post hoc analyses then show that grade is not
+  all four counts. Labeled post hoc analyses then show that grade is not
   prognostic in TCGA-LIHC and that the grade trend tracks proliferation, and that
   proliferation negatively confounds the association between CYB5R3 and survival.
   That finding is tested in GSE14520 under a rule fixed in advance. This repository
