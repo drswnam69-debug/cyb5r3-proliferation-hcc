@@ -1,0 +1,14 @@
+cohort,variable,n_available,n_set,coverage,meets_coverage_threshold,note
+TCGA-LIHC,DSS,341,341,1,TRUE,"disease-specific survival, Liu et al CDR"
+TCGA-LIHC,PFI,341,341,1,TRUE,"progression-free interval, Liu et al CDR"
+TCGA-LIHC,Child-Pugh class,228,341,0.669,TRUE,""
+TCGA-LIHC,Ishak fibrosis,198,341,0.581,FALSE,""
+TCGA-LIHC,albumin,261,341,0.765,TRUE,"specified value, unit corrected"
+TCGA-LIHC,platelet,283,341,0.83,TRUE,unit corrected
+TCGA-LIHC,INR,192,341,0.563,FALSE,""
+TCGA-LIHC,serology recorded,155,341,0.455,FALSE,etiology; the free-text risk field is near empty
+TCGA-LIHC,bilirubin,,341,,FALSE,"NOT TESTABLE: the matrix carries assay limit fields only, with no column that can be shown to hold the patient value"
+GSE14520,cirrhosis,225,225,1,TRUE,""
+GSE14520,BCLC stage,225,225,1,TRUE,""
+GSE14520,recurrence,225,225,1,TRUE,""
+GSE14520,HBV status,225,225,1,TRUE,""

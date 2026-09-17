@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this software or these results, please cite it as below."
-title: "Tumor proliferation masks the prognostic association of CYB5R3 in hepatocellular carcinoma: pre-registered analysis code and results"
+title: "Tumor proliferation masks a prognostic gene association in hepatocellular carcinoma: pre-registered analysis code and results for a two-cohort study of CYB5R3"
 authors:
   - family-names: "Nam"
     given-names: "Soon Woo"
     orcid: "https://orcid.org/0000-0001-5562-4775"
     affiliation: "Hepatobiliary Unit, Division of Gastroenterology, Department of Internal Medicine, Incheon St. Mary's Hospital, College of Medicine, The Catholic University of Korea, Seoul, Republic of Korea"
-version: "1.0.0"
-date-released: "2026-09-10"
+version: "1.1.0"
+date-released: "2026-09-17"
 license: MIT
 doi: "10.5281/zenodo.22685965"
 repository-code: "https://github.com/drswnam69-debug/cyb5r3-proliferation-hcc"
@@ -36,6 +36,16 @@ abstract: >-
   all four counts. Labeled post hoc analyses then show that grade is not
   prognostic in TCGA-LIHC and that the grade trend tracks proliferation, and that
   proliferation negatively confounds the association between CYB5R3 and survival.
-  That finding is tested in GSE14520 under a rule fixed in advance. This repository
-  contains the decision rules, the analysis scripts, the frozen subclass templates,
-  every result file, the run logs and the manuscript figures.
+  That finding is tested in GSE14520 under a rule fixed in advance. Version 1.1.0
+  adds a clinical robustness stage, with alternative endpoints, liver function
+  sensitivity and a bootstrap interval for the change in hazard ratio, and a
+  referee stage that measures how much of that change is arithmetic rather than
+  causal, because the Cox hazard ratio is not collapsible. That measurement is
+  made by simulating from the fitted model with the proliferation score permuted,
+  so that the covariate carries its prognostic strength but no association with
+  the exposure. The referee stage also adds a baseline characteristics table,
+  median follow-up by reverse Kaplan-Meier, a grade trend sensitivity check that
+  removes the twelve grade 4 tumors, ESTIMATE stromal and immune scores, and a
+  HALLMARK_G2M_CHECKPOINT proliferation score. This repository contains the
+  decision rules, the analysis scripts, the frozen subclass templates, every
+  result file, the run logs and the manuscript figures.

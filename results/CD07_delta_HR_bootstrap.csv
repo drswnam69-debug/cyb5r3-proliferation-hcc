@@ -1,0 +1,3 @@
+cohort,HR_without,HR_with,ratio_of_HR,delta_logHR,CI_low,CI_high,boot_n,B,excludes_no_change,reading
+TCGA-LIHC,1.24115255115047,1.37106260810121,1.10466888766439,0.0995456408934375,1.03452977299124,1.21348909318925,2000,2000,TRUE,The increase in the hazard ratio is larger than resampling noise.
+GSE14520,1.24394120817337,1.31075782918234,1.05371364865956,0.0523207326186625,0.99954437110288,1.15876936129793,2000,2000,FALSE,The increase is not distinguishable from resampling noise; report the point estimate only.

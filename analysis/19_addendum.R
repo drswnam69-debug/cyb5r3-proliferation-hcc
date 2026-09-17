@@ -16,7 +16,7 @@
 #  Run: RUN_C_ADDENDUM.R 을 열고 Source (18 을 먼저 돌린 뒤 이어서 실행된다)
 # =====================================================================
 hdr("A - POST HOC addendum")
-message("  NOTE: every result below is post hoc and must be labelled as such.")
+message("  NOTE: every result below is post hoc and must be labeled as such.")
 
 PROLIF <- c("MKI67","TOP2A","CCNB1","PCNA","BUB1","CCNA2","AURKA","RRM2")
 prolif_ok <- setdiff(intersect(PROLIF, rownames(EX)), unique(unlist(TEMPL)))

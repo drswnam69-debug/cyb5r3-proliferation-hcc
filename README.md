@@ -1,4 +1,4 @@
-# Tumor proliferation masks the prognostic association of CYB5R3 in hepatocellular carcinoma
+# Tumor proliferation masks a prognostic gene association in hepatocellular carcinoma
 
 Pre-registered analysis code, decision rules, results and figures for a two-cohort study of
 CYB5R3 in hepatocellular carcinoma (HCC), using TCGA-LIHC and GSE14520.
@@ -29,11 +29,27 @@ found along the way was handled under a further rule fixed in advance.
 An exploratory tissue composition analysis, added after Stage 2, did **not** replicate in
 GSE14520 and is reported as such.
 
+**Stage D, post hoc clinical robustness.** Added after Stage 3. Alternative endpoints
+(disease-specific survival, progression-free interval, recurrence), liver function sensitivity,
+a bootstrap interval for the change in hazard ratio, and absolute survival by tertile.
+
+**Stage E, added in referee review.** The Cox hazard ratio is not collapsible, so part of the
+rise seen when proliferation enters the model is arithmetic rather than causal. Stage E measures
+how much. It simulates survival from the fitted model with the proliferation score permuted, so
+that the covariate keeps its prognostic strength but carries no association with CYB5R3 and no
+confounding at all, and reads the rise that remains. Stage E also adds a baseline characteristics
+table, median follow-up by reverse Kaplan-Meier, a grade trend sensitivity check that removes the
+twelve grade 4 tumors, ESTIMATE stromal and immune scores in place of the PC1 composition proxy,
+and a HALLMARK_G2M_CHECKPOINT proliferation score.
+
 ## Requirements
 
 - R 4.x with `survival`, `dplyr`, `data.table`, `stringr`, `ggplot2`, `ggpubr`,
   `UCSCXenaTools`, `GEOquery`, `Biobase`
 - `clinfun` for the Jonckheere-Terpstra tests, `ragg` for LZW-compressed TIFF output
+- `estimate` (R-Forge) for the stromal and immune scores and `msigdbr` for the HALLMARK gene
+  set, both used by `analysis/25_referee.R`. Either may be absent; the script then records the
+  block as not run rather than failing
 - Internet access on first run: TCGA matrices are fetched from UCSC Xena and GSE14520 from GEO,
   then cached. Downloads land in `cache/` beside this README unless the environment variable
   `CYB5R3_CACHE` names another directory, or a checkout of the earlier pipeline sits beside this
@@ -49,8 +65,10 @@ Open one of these in RStudio and press Source. Each one runs everything before i
 | `RUN_C_ADDENDUM.R` | + Stage 2 (post hoc) |
 | `RUN_C_VALIDATION.R` | + Stage 3 (GSE14520 replication) |
 | `RUN_C_PH.R` | + proportional hazards handling |
-| `RUN_C_FIGURES.R` | + figures. This is the full pipeline |
+| `RUN_C_FIGURES.R` | + figures |
 | `RUN_C_FIGURES_ONLY.R` | figures only, if the objects are already in the session |
+| `RUN_C_CLINICAL.R` | Stages 1 to 3 + Stage D |
+| `RUN_C_ALL.R` | everything, in one pass. This is the full pipeline |
 
 ## Layout
 
@@ -58,13 +76,17 @@ Open one of these in RStudio and press Source. Each one runs everything before i
 analysis/       18_subtype.R  Stage 1, pre-registered
                 19_addendum.R Stage 2, post hoc
                 20_validation.R Stage 3, pre-registered replication + exploratory composition
-                21_ph.R       proportional hazards, pre-specified
-                22_figures.R  manuscript figures
+                21_ph.R       proportional hazards, under a rule fixed before fitting
+                22_figures.R  Figures 1 to 4
+                23_clinical.R Stage D, post hoc clinical robustness
+                24_figure5.R  Figure 5, Kaplan-Meier with numbers at risk
+                25_referee.R  Stage E, analyses added in referee review
                 grp/          the three Hoshida gene sets as downloaded from MSigDB v2026.1.Hs
                 hoshida_templates.tsv  those gene sets frozen on first use
                 vendor/01_common.R     helper file from the published pipeline, MIT, same author
 results/        every result file, run logs and session information
-figures/        Figure 1 to 4 as PNG (300 dpi), TIFF (LZW) and SVG
+figures/        Figure 1 to 5 as PNG (300 dpi), TIFF (LZW), SVG, EPS and PDF,
+                all 175 mm wide; README_EPS.txt records how the vector files were made
 PREREG_ProjectC_subtype.docx   the pre-registration
 ```
 
@@ -81,10 +103,13 @@ PREREG_ProjectC_subtype.docx   the pre-registration
 | `CB00` to `CB08` | Stage 3, the pre-registered replication |
 | `CB09` to `CB12` | the exploratory composition analysis, which did not replicate |
 | `CC00` to `CC99` | proportional hazards handling and its verdict |
+| `CD00` to `CD08` | Stage D, post hoc clinical robustness |
+| `CE00` to `CE06` | Stage E, added in referee review |
 
 ## Reproducibility notes
 
-- The seed is fixed. Session information and a run log are written for every execution.
+- The seed is fixed. Every stage that writes results also writes its session information and
+  a run log to `results/`, under the stage's own tag.
 - The subclass templates are frozen to `analysis/hoshida_templates.tsv` on first use, so later
   runs do not depend on the availability of an external gene set server. The original `.grp`
   downloads are included so the freeze can be checked.
@@ -95,6 +120,15 @@ PREREG_ProjectC_subtype.docx   the pre-registration
 - On macOS without XQuartz, `grDevices::tiff(type = "cairo")` falls back to an uncompressed
   device with only a warning. `analysis/22_figures.R` therefore uses `ragg` and verifies the
   written TIFF by reading its compression tag.
+- The same missing cairo makes `grDevices::cairo_ps()` unavailable, and the `postscript()`
+  fallback lays text out with Helvetica metrics wider than those used for the PNG and SVG, which
+  clips panel titles. Files written by the fallback are flagged in the console output and are
+  placeholders. The deposited EPS and PDF are converted from the archived SVG instead, which
+  carries explicit text widths and so reproduces the original geometry exactly. The commands are
+  in `figures/README_EPS.txt`.
+- Simulation in `analysis/25_referee.R` draws survival times by inverting the baseline cumulative
+  hazard of the fitted model, with a fixed seed, and permutes the proliferation score so that it
+  is independent of everything else in the design matrix.
 
 ## Data
 

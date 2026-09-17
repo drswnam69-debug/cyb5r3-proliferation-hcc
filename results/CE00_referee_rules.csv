@@ -1,0 +1,10 @@
+rule,value
+designed_on,"2026-09-17, after the manuscript was rewritten"
+status,"POST HOC, sensitivity and reporting only"
+e1_question,how much of the rise in the hazard ratio is non-collapsibility
+e1_design,"simulate survival from the fitted adjusted model with the proliferation score permuted, so that it keeps its marginal distribution and its coefficient but is independent of CYB5R3; the ratio of hazard ratios that remains is non-collapsibility alone"
+e1_B,1000
+e1_seed,20260917
+e3_question,does the grade trend survive removal of the 12 grade-4 tumors
+e4_tool,"ESTIMATE stromal and immune scores; on RNA-seq the calibrated purity conversion is not defined, so the ESTIMATE score itself is used as the covariate"
+e5_signature,"HALLMARK_G2M_CHECKPOINT via msigdbr, if available"

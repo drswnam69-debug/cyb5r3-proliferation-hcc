@@ -33,7 +33,7 @@ tiff_compression <- function(fn) {
   NA_integer_
 }
 
-save3 <- function(p, name, w = 180, h = 130) {
+save3 <- function(p, name, w = 175, h = 126) {
   base <- file.path(FIG, name); win <- w / 25.4; hin <- h / 25.4
   ggsave(paste0(base, ".png"), p, width = win, height = hin, units = "in", dpi = 300)
 
@@ -54,8 +54,39 @@ save3 <- function(p, name, w = 180, h = 130) {
   svg <- tryCatch({ suppressMessages(
     ggsave(paste0(base, ".svg"), p, width = win, height = hin, units = "in")); TRUE },
     error = function(e) FALSE)
+
+  ## Vector EPS for journals that require vector line art (Scientific Reports).
+  ## Remove any earlier file first. cairo_ps() only WARNS when the cairo DLL
+  ## cannot be loaded, so without this the existence-and-size check below
+  ## succeeds on the previous run's file and the console reports an EPS that
+  ## this run never wrote.
+  eps <- paste0(base, ".eps"); epsok <- FALSE
+  if (file.exists(eps)) unlink(eps)
+  if (isTRUE(capabilities("cairo"))) {
+    epsok <- tryCatch({
+      grDevices::cairo_ps(eps, width = win, height = hin, fallback_resolution = 800,
+                          onefile = FALSE, bg = "white")
+      print(p); grDevices::dev.off(); file.exists(eps) && file.size(eps) > 5000
+    }, error = function(e) FALSE)
+  }
+  epsfb <- FALSE
+  if (!epsok) {
+    ## No cairo on this machine. postscript() writes a valid EPS but uses
+    ## Helvetica AFM metrics, which are wider than the metrics used for the
+    ## PNG/SVG, so panel titles can be clipped. Such a file is a placeholder:
+    ## the submission EPS is converted from the SVG (see figures/README_EPS.txt).
+    epsok <- tryCatch({
+      grDevices::postscript(eps, width = win, height = hin, onefile = FALSE,
+                            horizontal = FALSE, paper = "special", bg = "white")
+      print(p); grDevices::dev.off(); file.exists(eps) && file.size(eps) > 5000
+    }, error = function(e) FALSE)
+    epsfb <- epsok
+  }
+  epstag <- if (!epsok) " [!] EPS FAILED" else if (epsfb)
+    ", eps [!] postscript fallback, convert from SVG" else ", eps"
   message("  -> ", basename(base), ": png, tiff (",
-          if (ok) "LZW verified" else "uncompressed", ")", if (svg) ", svg" else "")
+          if (ok) "LZW verified" else "uncompressed", ")", if (svg) ", svg" else "",
+          epstag)
 }
 
 ## ---------------------------------------------------------------- Fig 1
@@ -68,7 +99,7 @@ B <- data.frame(
           "All four fail.\nSubclass explains nothing.",
           "POST HOC\nIs grade prognostic at all?\nWhat is the grade trend made of?",
           "Grade is not prognostic.\nThe trend is proliferation.",
-          "PRE-REGISTERED\nDoes adjusting for proliferation\nraise the hazard ratio?",
+          "RULE FIXED IN ADVANCE\nDoes adjusting for proliferation\nraise the hazard ratio?",
           "Replicated in GSE14520.\nRobust to the PH violation."),
   stringsAsFactors = FALSE)
 f1 <- ggplot() +
@@ -86,7 +117,7 @@ f1 <- ggplot() +
                      "rule fixed before this cohort was used")) +
   coord_cartesian(xlim = c(-0.5, 9.1), ylim = c(1.15, 3.65)) +
   theme_void(base_size = 8)
-save3(f1, "Figure1_design", 180, 62)
+save3(f1, "Figure1_design", 175, 60)
 
 ## ---------------------------------------------------------------- Fig 2
 cnt <- as.data.frame(table(SUB$subclass), stringsAsFactors = FALSE)
@@ -117,7 +148,7 @@ f2c <- ggplot(dd2, aes(subclass, CYB5R3)) +
        subtitle = sprintf("Kruskal-Wallis p = %.3f", H1$p),
        x = NULL, y = "CYB5R3 (log2)") + th
 f2 <- ggarrange(f2a, f2b, f2c, ncol = 3, widths = c(0.85, 1.5, 0.95))
-save3(f2, "Figure2_subclass", 180, 72)
+save3(f2, "Figure2_subclass", 175, 70)
 
 ## ---------------------------------------------------------------- Fig 3
 dg3 <- D[!is.na(D$grade_ord) & !is.na(D$CYB5R3), ]
@@ -138,7 +169,7 @@ f3b <- ggplot(A3b, aes(grade_slope, adjustment, colour = sig)) +
   geom_text(aes(x = 1.5, label = sprintf("p = %.3f", p)), hjust = 0, size = 2.2) +
   scale_colour_manual(values = c(`TRUE` = BAD, `FALSE` = GREY)) +
   coord_cartesian(xlim = c(xr[1] * 1.08, 12)) +
-  labs(title = "B  Grade slope after adjustment",
+  labs(title = "B  Grade slope",
        subtitle = "red, p < 0.05", x = "Slope on ranked CYB5R3", y = NULL) + th
 
 A1b <- A1; A1b$lab <- factor(c("Unadjusted", "Age, sex, stage"),
@@ -152,7 +183,7 @@ f3c <- ggplot(A1b, aes(HR, lab)) +
   coord_cartesian(xlim = c(0.82, 2.25)) +
   labs(title = "C  Grade is not prognostic", x = "Hazard ratio for overall survival", y = NULL) + th
 f3 <- ggarrange(f3a, f3b, f3c, ncol = 3, widths = c(0.85, 1.25, 1.2))
-save3(f3, "Figure3_grade_proliferation", 180, 72)
+save3(f3, "Figure3_grade_proliferation", 175, 70)
 
 ## ---------------------------------------------------------------- Fig 4
 gr <- function(d, i, coh, lab) data.frame(cohort = coh, lab = lab,
@@ -161,14 +192,12 @@ FA <- rbind(
   gr(A5, 1, "TCGA-LIHC", "Age, sex, stage"),
   gr(A5, 2, "TCGA-LIHC", "+ grade"),
   gr(A5, 3, "TCGA-LIHC", "+ grade + proliferation"),
-  gr(A5, 4, "TCGA-LIHC", "+ grade + proliferation + composition"),
   gr(C1, 2, "TCGA-LIHC", "Stratified on proliferation tertiles"),
   gr(C1, 3, "TCGA-LIHC", "Time-varying proliferation coefficient"),
   gr(B3, 1, "GSE14520",  "Age, sex, TNM"),
   gr(B3, 2, "GSE14520",  "+ proliferation"))
-## 탐색적 조성 보정 결과가 있으면 대칭이 되도록 함께 표시한다.
-if (exists("B8") && is.data.frame(B8) && nrow(B8) >= 3)
-  FA <- rbind(FA, gr(B8, 3, "GSE14520", "+ proliferation + composition"))
+## 조성 보정은 탐색적이고 재현되지 않았으므로 본문 그림에서 제외하고
+## Supporting Information 에만 싣는다 (원고 Table 3 과 일치시킨다).
 FA$cohort <- factor(FA$cohort, levels = c("TCGA-LIHC", "GSE14520"))
 FA$lab <- factor(FA$lab, levels = rev(FA$lab))
 FA$adj <- grepl("proliferation", FA$lab, ignore.case = TRUE)
@@ -198,6 +227,6 @@ f4b <- ggplot(B7b, aes(HR, definition)) +
        subtitle = "TCGA-LIHC, eleven definitions",
        x = "Hazard ratio per standard deviation", y = NULL) + th
 f4 <- ggarrange(f4a, f4b, ncol = 2, widths = c(1.5, 1))
-save3(f4, "Figure4_suppression", 180, 92)
+save3(f4, "Figure4_suppression", 175, 89)
 
 message("\n[figures] done -> ", FIG)

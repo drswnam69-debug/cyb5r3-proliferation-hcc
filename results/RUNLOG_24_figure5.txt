@@ -1,0 +1,4 @@
+script : 24_figure5
+run at : 2026-09-17 10:44:32 KST
+R      : R version 4.6.1 (2026-06-24)
+seed   : 20260817

@@ -1,0 +1,27 @@
+cohort,characteristic,value,unit,n_available
+TCGA-LIHC,Patients,341,n,341
+TCGA-LIHC,Deaths,116,n,341
+TCGA-LIHC,Censored,225,n,341
+TCGA-LIHC,Age,61 (51 to 68),years,341
+TCGA-LIHC,Sex: FEMALE,109 (32.0%),n (%),341
+TCGA-LIHC,Sex: MALE,232 (68.0%),n (%),341
+TCGA-LIHC,Stage: I-II,254 (74.5%),n (%),341
+TCGA-LIHC,Stage: III-IV,87 (25.5%),n (%),341
+TCGA-LIHC,Grade: 1,46 (13.6%),n (%),339
+TCGA-LIHC,Grade: 2,166 (49.0%),n (%),339
+TCGA-LIHC,Grade: 3,115 (33.9%),n (%),339
+TCGA-LIHC,Grade: 4,12 (3.5%),n (%),339
+TCGA-LIHC,Median follow-up (reverse Kaplan-Meier),819,days,341
+GSE14520,Patients,225,n,225
+GSE14520,Deaths,86,n,225
+GSE14520,Censored,139,n,225
+GSE14520,Age,50 (43 to 58),years,225
+GSE14520,Sex: F,30 (13.3%),n (%),225
+GSE14520,Sex: M,195 (86.7%),n (%),225
+GSE14520,TNM stage: I-II,174 (77.3%),n (%),225
+GSE14520,TNM stage: III-IV,51 (22.7%),n (%),225
+GSE14520,Median follow-up (reverse Kaplan-Meier),57.1,months,225
+GSE14520,Cirrhosis: no,18 (8.0%),n (%),225
+GSE14520,Cirrhosis: yes,207 (92.0%),n (%),225
+GSE14520,BCLC stage: 0-A,172 (76.4%),n (%),225
+GSE14520,BCLC stage: B-C,53 (23.6%),n (%),225

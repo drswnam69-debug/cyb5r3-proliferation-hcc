@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='510.24pt' height='175.75pt' viewBox='0 0 510.24 175.75'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='496.06pt' height='170.08pt' viewBox='0 0 496.06 170.08'>
 <g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
@@ -21,46 +21,46 @@
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: none;'/>
 <defs>
-  <clipPath id='cpMC4wMHw1MTAuMjR8MC4wMHwxNzUuNzU='>
-    <rect x='0.00' y='0.00' width='510.24' height='175.75' />
+  <clipPath id='cpMC4wMHw0OTYuMDZ8MC4wMHwxNzAuMDg='>
+    <rect x='0.00' y='0.00' width='496.06' height='170.08' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMC4wMHw1MTAuMjR8MC4wMHwxNzUuNzU=)'>
-<rect x='0.00' y='0.000000000000028' width='510.24' height='175.75' style='stroke-width: 0.00; stroke: none;' />
-<rect x='30.44' y='17.57' width='130.46' height='63.91' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #DEEAF6;' />
-<rect x='30.44' y='103.21' width='130.46' height='39.62' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #F2F2F2;' />
-<rect x='189.89' y='17.57' width='130.46' height='63.91' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFF2CC;' />
-<rect x='189.89' y='103.21' width='130.46' height='39.62' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #F2F2F2;' />
-<rect x='349.34' y='17.57' width='130.46' height='63.91' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #DEEAF6;' />
-<rect x='349.34' y='103.21' width='130.46' height='39.62' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #F2F2F2;' />
-<text x='95.67' y='42.84' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='58.08px' lengthAdjust='spacingAndGlyphs'>PRE-REGISTERED</text>
-<text x='95.67' y='51.87' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='95.02px' lengthAdjust='spacingAndGlyphs'>Does molecular subclass explain</text>
-<text x='95.67' y='60.90' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='81.58px' lengthAdjust='spacingAndGlyphs'>the discordance? (H1 to H4)</text>
-<text x='95.67' y='120.85' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='32.28px' lengthAdjust='spacingAndGlyphs'>All four fail.</text>
-<text x='95.67' y='129.88' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='77.25px' lengthAdjust='spacingAndGlyphs'>Subclass explains nothing.</text>
-<text x='255.12' y='42.84' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='33.98px' lengthAdjust='spacingAndGlyphs'>POST HOC</text>
-<text x='255.12' y='51.87' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='74.69px' lengthAdjust='spacingAndGlyphs'>Is grade prognostic at all?</text>
-<text x='255.12' y='60.90' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='96.80px' lengthAdjust='spacingAndGlyphs'>What is the grade trend made of?</text>
-<text x='255.12' y='120.85' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='69.25px' lengthAdjust='spacingAndGlyphs'>Grade is not prognostic.</text>
-<text x='255.12' y='129.88' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='72.14px' lengthAdjust='spacingAndGlyphs'>The trend is proliferation.</text>
-<text x='414.57' y='42.84' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='58.08px' lengthAdjust='spacingAndGlyphs'>PRE-REGISTERED</text>
-<text x='414.57' y='51.87' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='88.47px' lengthAdjust='spacingAndGlyphs'>Does adjusting for proliferation</text>
-<text x='414.57' y='60.90' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='64.89px' lengthAdjust='spacingAndGlyphs'>raise the hazard ratio?</text>
-<text x='414.57' y='120.85' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='73.27px' lengthAdjust='spacingAndGlyphs'>Replicated in GSE14520.</text>
-<text x='414.57' y='129.88' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='77.25px' lengthAdjust='spacingAndGlyphs'>Robust to the PH violation.</text>
-<line x1='165.73' y1='49.53' x2='189.89' y2='49.53' style='stroke-width: 0.85; stroke: #595959; stroke-linecap: butt;' />
-<polyline points='185.47,52.08 189.89,49.53 185.47,46.98 ' style='stroke-width: 0.85; stroke: #595959; stroke-linecap: butt;' />
-<line x1='325.18' y1='49.53' x2='349.34' y2='49.53' style='stroke-width: 0.85; stroke: #595959; stroke-linecap: butt;' />
-<polyline points='344.92,52.08 349.34,49.53 344.92,46.98 ' style='stroke-width: 0.85; stroke: #595959; stroke-linecap: butt;' />
-<line x1='95.67' y1='81.48' x2='95.67' y2='97.46' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
-<polyline points='93.40,93.53 95.67,97.46 97.94,93.53 ' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
-<line x1='255.12' y1='81.48' x2='255.12' y2='97.46' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
-<polyline points='252.85,93.53 255.12,97.46 257.39,93.53 ' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
-<line x1='414.57' y1='81.48' x2='414.57' y2='97.46' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
-<polyline points='412.30,93.53 414.57,97.46 416.83,93.53 ' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
-<text x='95.67' y='157.12' text-anchor='middle' style='font-size: 5.98px;fill: #595959; font-family: "Arial";' textLength='99.39px' lengthAdjust='spacingAndGlyphs'>rules fixed before any data were seen</text>
-<text x='255.12' y='157.12' text-anchor='middle' style='font-size: 5.98px;fill: #595959; font-family: "Arial";' textLength='84.81px' lengthAdjust='spacingAndGlyphs'>designed after the results above</text>
-<text x='414.57' y='157.12' text-anchor='middle' style='font-size: 5.98px;fill: #595959; font-family: "Arial";' textLength='98.73px' lengthAdjust='spacingAndGlyphs'>rule fixed before this cohort was used</text>
+<g clip-path='url(#cpMC4wMHw0OTYuMDZ8MC4wMHwxNzAuMDg=)'>
+<rect x='0.00' y='0.000000000000028' width='496.06' height='170.08' style='stroke-width: 0.00; stroke: none;' />
+<rect x='29.59' y='17.01' width='126.83' height='61.85' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #DEEAF6;' />
+<rect x='29.59' y='99.88' width='126.83' height='38.35' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #F2F2F2;' />
+<rect x='184.61' y='17.01' width='126.83' height='61.85' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFF2CC;' />
+<rect x='184.61' y='99.88' width='126.83' height='38.35' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #F2F2F2;' />
+<rect x='339.63' y='17.01' width='126.83' height='61.85' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #DEEAF6;' />
+<rect x='339.63' y='99.88' width='126.83' height='38.35' style='stroke-width: 0.64; stroke: #737373; stroke-linecap: butt; stroke-linejoin: miter; fill: #F2F2F2;' />
+<text x='93.01' y='41.24' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='58.08px' lengthAdjust='spacingAndGlyphs'>PRE-REGISTERED</text>
+<text x='93.01' y='50.27' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='95.02px' lengthAdjust='spacingAndGlyphs'>Does molecular subclass explain</text>
+<text x='93.01' y='59.30' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='81.58px' lengthAdjust='spacingAndGlyphs'>the discordance? (H1 to H4)</text>
+<text x='93.01' y='116.88' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='32.28px' lengthAdjust='spacingAndGlyphs'>All four fail.</text>
+<text x='93.01' y='125.91' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='77.25px' lengthAdjust='spacingAndGlyphs'>Subclass explains nothing.</text>
+<text x='248.03' y='41.24' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='33.98px' lengthAdjust='spacingAndGlyphs'>POST HOC</text>
+<text x='248.03' y='50.27' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='74.69px' lengthAdjust='spacingAndGlyphs'>Is grade prognostic at all?</text>
+<text x='248.03' y='59.30' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='96.80px' lengthAdjust='spacingAndGlyphs'>What is the grade trend made of?</text>
+<text x='248.03' y='116.88' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='69.25px' lengthAdjust='spacingAndGlyphs'>Grade is not prognostic.</text>
+<text x='248.03' y='125.91' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='72.14px' lengthAdjust='spacingAndGlyphs'>The trend is proliferation.</text>
+<text x='403.05' y='41.24' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='79.38px' lengthAdjust='spacingAndGlyphs'>RULE FIXED IN ADVANCE</text>
+<text x='403.05' y='50.27' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='88.47px' lengthAdjust='spacingAndGlyphs'>Does adjusting for proliferation</text>
+<text x='403.05' y='59.30' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='64.89px' lengthAdjust='spacingAndGlyphs'>raise the hazard ratio?</text>
+<text x='403.05' y='116.88' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='73.27px' lengthAdjust='spacingAndGlyphs'>Replicated in GSE14520.</text>
+<text x='403.05' y='125.91' text-anchor='middle' style='font-size: 6.54px; font-family: "Arial";' textLength='77.25px' lengthAdjust='spacingAndGlyphs'>Robust to the PH violation.</text>
+<line x1='161.13' y1='47.93' x2='184.61' y2='47.93' style='stroke-width: 0.85; stroke: #595959; stroke-linecap: butt;' />
+<polyline points='180.20,50.48 184.61,47.93 180.20,45.38 ' style='stroke-width: 0.85; stroke: #595959; stroke-linecap: butt;' />
+<line x1='316.15' y1='47.93' x2='339.63' y2='47.93' style='stroke-width: 0.85; stroke: #595959; stroke-linecap: butt;' />
+<polyline points='335.22,50.48 339.63,47.93 335.22,45.38 ' style='stroke-width: 0.85; stroke: #595959; stroke-linecap: butt;' />
+<line x1='93.01' y1='78.85' x2='93.01' y2='94.32' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
+<polyline points='90.74,90.39 93.01,94.32 95.28,90.39 ' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
+<line x1='248.03' y1='78.85' x2='248.03' y2='94.32' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
+<polyline points='245.76,90.39 248.03,94.32 250.30,90.39 ' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
+<line x1='403.05' y1='78.85' x2='403.05' y2='94.32' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
+<polyline points='400.78,90.39 403.05,94.32 405.32,90.39 ' style='stroke-width: 0.64; stroke: #8C8C8C; stroke-linecap: butt;' />
+<text x='93.01' y='152.12' text-anchor='middle' style='font-size: 5.98px;fill: #595959; font-family: "Arial";' textLength='99.39px' lengthAdjust='spacingAndGlyphs'>rules fixed before any data were seen</text>
+<text x='248.03' y='152.12' text-anchor='middle' style='font-size: 5.98px;fill: #595959; font-family: "Arial";' textLength='84.81px' lengthAdjust='spacingAndGlyphs'>designed after the results above</text>
+<text x='403.05' y='152.12' text-anchor='middle' style='font-size: 5.98px;fill: #595959; font-family: "Arial";' textLength='98.73px' lengthAdjust='spacingAndGlyphs'>rule fixed before this cohort was used</text>
 </g>
 </g>
 </svg>

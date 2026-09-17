@@ -1,6 +1,9 @@
 # =====================================================================
 #  21_ph.R  —  Project C, Addendum C
-#  PRE-SPECIFIED handling of the proportional-hazards violation found in B6.
+#  Handling of the proportional-hazards violation found in B6, under a rule
+#  written after the violation was detected but before the corrected models
+#  were fitted. That rule is fixed in advance of the analysis it governs; it is
+#  not part of the pre-registration.
 #
 #  What B6 showed: in the TCGA model, the proliferation term violates PH
 #  (Schoenfeld p = 0.0023; global p = 0.0094). CYB5R3 itself is fine
@@ -17,8 +20,9 @@
 #    WEAKENED if the CI covers 1 under either
 #    Anything else is reported as indeterminate.
 # =====================================================================
-hdr("C - PRE-SPECIFIED handling of the PH violation")
+hdr("C - PH violation handled under a rule fixed before the corrected models were fitted")
 
+message("  script version: 2026-09-17f")
 RULES_C <- list(
   robust_if   = "HR >= 1.25 and 95% CI excludes 1 under BOTH strata() and tt()",
   weakened_if = "95% CI covers 1 under either specification",
@@ -54,8 +58,8 @@ f_tt  <- coxph(Surv(OS.time, OS) ~ z5 + age + sex + stage_bin + grade_ord + zp +
 
 C1 <- dplyr::bind_rows(
   tidC(f_ref, "reference: proliferation as a constant term (violates PH)"),
-  tidC(f_str, "PRE-SPECIFIED: stratified on proliferation tertiles"),
-  tidC(f_tt,  "PRE-SPECIFIED: time-varying coefficient for proliferation"))
+  tidC(f_str, "RULE FIXED BEFORE FITTING: stratified on proliferation tertiles"),
+  tidC(f_tt,  "RULE FIXED BEFORE FITTING: time-varying coefficient for proliferation"))
 print(C1); w_res(C1, "CC01_ph_corrected_models.csv")
 
 ## C4. PH re-test on the stratified model

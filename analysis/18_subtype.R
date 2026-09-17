@@ -70,7 +70,7 @@ RULES <- list(
   ## subclass assignment
   ntp_permutations      = 1000,
   ntp_fdr_cut           = 0.20,   # per-sample NTP BH-FDR above this = Unclassified
-  min_class_n           = 30,     # a subclass with fewer patients is not analysed separately
+  min_class_n           = 30,     # a subclass with fewer patients is not analyzed separately
 
   ## subclass validity control (must PASS before any contrast is computed)
   ##   S2 is the progenitor/proliferative class, S3 the well-differentiated class.
@@ -106,6 +106,7 @@ w_res(data.frame(rule = names(RULES),
 ##     report that check BEFORE computing any contrast)
 ## =====================================================================
 hdr("1 - Premise checks")
+message("  script version: 2026-09-17f")
 flow <- list(); add <- function(step, n, note = "") {
   ## n 은 "20530 x 423" 같은 문자열도 받으므로 열 자료형을 문자로 통일한다.
   flow[[length(flow) + 1]] <<- data.frame(step = step, n = as.character(n),
@@ -127,10 +128,10 @@ colnames(EX) <- nb(colnames(EX))
 add("HiSeqV2 matrix: genes x samples", sprintf("%d x %d", nrow(EX), ncol(EX)),
     "log2(norm_count + 1); identical matrix to the published primary analysis")
 
-## 1b. primary tumours, one sample per patient (published selection rule)
+## 1b. primary tumors, one sample per patient (published selection rule)
 keep <- colnames(EX)[typ(colnames(EX)) %in% TUMOR_CODES]
 EX   <- EX[, keep, drop = FALSE]
-add("Tumour samples (codes 01/02/03/05/06/07)", ncol(EX))
+add("Tumor samples (codes 01/02/03/05/06/07)", ncol(EX))
 pt   <- pat(colnames(EX))
 EX   <- EX[, !duplicated(pt), drop = FALSE]
 colnames(EX) <- pat(colnames(EX))
@@ -321,7 +322,7 @@ w_res(data.frame(union_size = length(Reduce(union, TEMPL)),
                  S1 = length(TEMPL$S1), S2 = length(TEMPL$S2), S3 = length(TEMPL$S3),
                  matrix_genes = nrow(EX), matrix_samples = ncol(EX)),
       "C03c_template_coverage.csv")
-Z <- t(scale(t(as.matrix(EX[uni, , drop = FALSE]))))      # gene-wise standardisation
+Z <- t(scale(t(as.matrix(EX[uni, , drop = FALSE]))))      # gene-wise standardization
 Z[!is.finite(Z)] <- 0
 TM <- vapply(TEMPL, function(g) as.numeric(uni %in% g), numeric(length(uni)))
 
@@ -354,7 +355,7 @@ tab <- as.data.frame(table(CC$subclass), stringsAsFactors = FALSE)
 names(tab) <- c("subclass","n")
 w_res(tab, "C04_subclass_counts.csv")
 small <- tab$subclass[tab$n < RULES$min_class_n & tab$subclass != "Unclassified"]
-if (length(small)) message("  [note] below min_class_n and not analysed separately: ",
+if (length(small)) message("  [note] below min_class_n and not analyzed separately: ",
                            paste(small, collapse = ", "))
 
 ## =====================================================================
@@ -388,7 +389,7 @@ message(sprintf("  S2 markers passing: %d/%d | S3 markers passing: %d/%d | CONTR
                 if (CONTROL_OK) "PASS" else "FAIL"))
 if (!CONTROL_OK) {
   w_res(data.frame(verdict = "NOT TESTABLE",
-                   reason = "Hoshida NTP assignment does not reproduce the known marker behaviour of S2 and S3 in this matrix. Per the pre-registered rule no contrast is computed."),
+                   reason = "Hoshida NTP assignment does not reproduce the known marker behavior of S2 and S3 in this matrix. Per the pre-registered rule no contrast is computed."),
         "C99_verdict.csv")
   save_session("18_subtype"); stop("Validity control failed - reported as not testable, by design.")
 }

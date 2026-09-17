@@ -1,0 +1,11 @@
+rule,value
+designed_on,"2026-09-11, after the manuscript was drafted"
+status,"POST HOC, sensitivity only; no confirmatory claim rests on it"
+min_coverage_to_model,0.6
+coverage_rule,"a variable available in < 60% of a model set is described, not modeled; meeting the threshold makes a variable eligible for modeling and does not mean it entered any model reported here"
+endpoints_tcga,"OS (primary, as published), DSS, PFI"
+endpoint_gse,"OS (primary), recurrence-free survival"
+delta_bootstrap_B,2000
+delta_rule,paired resamples; the same bootstrap sample fits both models
+km_groups,tertiles of CYB5R3 within each cohort
+five_year_mark,"1825 days in TCGA-LIHC, 60 months in GSE14520"

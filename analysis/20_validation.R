@@ -4,7 +4,7 @@
 #
 #  Hypothesis (fixed before this script was run, and before GSE14520 was
 #  touched for this purpose):
-#    In TCGA-LIHC, adjusting for tumour proliferation RAISED the CYB5R3
+#    In TCGA-LIHC, adjusting for tumor proliferation RAISED the CYB5R3
 #    hazard ratio (1.231 -> 1.371) and strengthened it (p 0.031 -> 0.0013),
 #    because CYB5R3 is negatively correlated with proliferation while
 #    proliferation is adverse. That is negative confounding, or suppression.

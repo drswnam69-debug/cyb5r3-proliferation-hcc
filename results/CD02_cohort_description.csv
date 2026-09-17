@@ -1,0 +1,14 @@
+cohort,variable,level,n,N,percent
+TCGA-LIHC,serology recorded,any,155,341,45.5
+TCGA-LIHC,"serology, among those with a record",hepatitis B surface antigen,134,155,86.5
+TCGA-LIHC,"serology, among those with a record",hepatitis C antibody,82,155,52.9
+TCGA-LIHC,Child-Pugh class,A,207,341,60.7
+TCGA-LIHC,Child-Pugh class,B,20,341,5.9
+TCGA-LIHC,Child-Pugh class,C,1,341,0.3
+TCGA-LIHC,Ishak recorded,any,198,341,58.1
+TCGA-LIHC,"Ishak 5-6, among those with a score",5-6,74,198,37.4
+TCGA-LIHC,"Ishak 0, among those with a score",0,70,198,35.4
+GSE14520,cirrhosis,yes,207,225,92
+GSE14520,BCLC stage,0-A,172,225,76.4
+GSE14520,BCLC stage,B-C,53,225,23.6
+GSE14520,HBV positive,yes,218,225,96.9
