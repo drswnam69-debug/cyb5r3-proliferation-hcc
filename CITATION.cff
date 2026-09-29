@@ -1,51 +1,40 @@
 cff-version: 1.2.0
 message: "If you use this software or these results, please cite it as below."
-title: "Tumor proliferation masks a prognostic gene association in hepatocellular carcinoma: pre-registered analysis code and results for a two-cohort study of CYB5R3"
+title: "Does adjusting for tumor proliferation bias prognostic gene expression estimates? Preregistered analysis code, decision rules and results"
 authors:
   - family-names: "Nam"
     given-names: "Soon Woo"
     orcid: "https://orcid.org/0000-0001-5562-4775"
     affiliation: "Hepatobiliary Unit, Division of Gastroenterology, Department of Internal Medicine, Incheon St. Mary's Hospital, College of Medicine, The Catholic University of Korea, Seoul, Republic of Korea"
-version: "1.1.0"
-date-released: "2026-09-17"
+version: "2.1.0"
+date-released: "2026-09-29"
 license: MIT
-doi: "10.5281/zenodo.22685965"
-repository-code: "https://github.com/drswnam69-debug/cyb5r3-proliferation-hcc"
+keywords:
+  - prognostic biomarkers
+  - confounding
+  - non-collapsibility
+  - gene expression
+  - preregistration
+  - meta-research
+  - survival analysis
+  - hepatocellular carcinoma
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.22685965"
-    description: "Concept DOI, always resolves to the latest version of this record"
+    value: "10.17605/OSF.IO/X5DCF"
+    description: "Preregistered plan for the confirmatory pan-cancer analysis, registered before it was run"
   - type: doi
-    value: "10.3390/ijms27177806"
-    description: "The earlier article that this work follows up"
-  - type: doi
-    value: "10.5281/zenodo.21987539"
-    description: "Analysis pipeline of the earlier article"
-keywords:
-  - hepatocellular carcinoma
-  - CYB5R3
-  - prognosis
-  - cell proliferation
-  - confounding
-  - molecular subclass
-  - pre-registration
+    value: "10.17605/OSF.IO/N8DW6"
+    description: "Preregistered plan for the follow-up test of the post hoc relationship; no analysis covered by it is in this release"
 abstract: >-
-  Pre-registered R analysis of CYB5R3 in hepatocellular carcinoma using TCGA-LIHC
-  and GSE14520. The pre-registered hypothesis, that Hoshida molecular subclass
-  explains the discordance between histologic grade and survival, is rejected on
-  all four counts. Labeled post hoc analyses then show that grade is not
-  prognostic in TCGA-LIHC and that the grade trend tracks proliferation, and that
-  proliferation negatively confounds the association between CYB5R3 and survival.
-  That finding is tested in GSE14520 under a rule fixed in advance. Version 1.1.0
-  adds a clinical robustness stage, with alternative endpoints, liver function
-  sensitivity and a bootstrap interval for the change in hazard ratio, and a
-  referee stage that measures how much of that change is arithmetic rather than
-  causal, because the Cox hazard ratio is not collapsible. That measurement is
-  made by simulating from the fitted model with the proliferation score permuted,
-  so that the covariate carries its prognostic strength but no association with
-  the exposure. The referee stage also adds a baseline characteristics table,
-  median follow-up by reverse Kaplan-Meier, a grade trend sensitivity check that
-  removes the twelve grade 4 tumors, ESTIMATE stromal and immune scores, and a
-  HALLMARK_G2M_CHECKPOINT proliferation score. This repository contains the
-  decision rules, the analysis scripts, the frozen subclass templates, every
-  result file, the run logs and the manuscript figures.
+  R analysis code, preregistered decision rules, result files, run logs and
+  figures for a study of what omitting tumor proliferation does to prognostic
+  gene expression estimates. For every expressed gene in a cohort, two Cox models
+  are fitted for overall survival, one adjusted for age, sex and stage and one
+  that adds a proliferation score; the ratio of the two hazard ratios is
+  regressed on the gene's correlation with that score. Discovery used TCGA-LIHC
+  with replication in GSE14520. A confirmatory analysis across further cancer
+  types was registered before it was run, and both of its hypotheses were
+  refuted; the refutation and the structure within it are reported as such, with
+  every exploratory and post hoc analysis labeled in the code and in the output.
+  A survey of 50 recent prognostic gene expression papers, drawn under a fixed
+  seed, records how often such studies adjust for proliferation at all.
