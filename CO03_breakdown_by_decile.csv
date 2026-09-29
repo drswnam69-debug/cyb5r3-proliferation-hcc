@@ -1,0 +1,21 @@
+grouping,bin,n,median_value,median_abs_residual,median_abs_observed,share
+decile of the predicted shift,"[-0.357,-0.102]",1691,-0.1319,0.02424,0.12099,0.2004
+decile of the predicted shift,"(-0.102,-0.0724]",1690,-0.0842,0.01515,0.07795,0.1944
+decile of the predicted shift,"(-0.0724,-0.0524]",1690,-0.0623,0.01389,0.05842,0.2378
+decile of the predicted shift,"(-0.0524,-0.0361]",1690,-0.0441,0.01336,0.042,0.318
+decile of the predicted shift,"(-0.0361,-0.02]",1690,-0.0281,0.01254,0.02626,0.4777
+decile of the predicted shift,"(-0.02,-0.00411]",1690,-0.0121,0.0127,0.01605,0.7913
+decile of the predicted shift,"(-0.00411,0.0147]",1690,0.0053,0.01226,0.01296,0.9462
+decile of the predicted shift,"(0.0147,0.0377]",1690,0.0253,0.01268,0.02218,0.5718
+decile of the predicted shift,"(0.0377,0.0699]",1690,0.0516,0.01645,0.04241,0.3878
+decile of the predicted shift,"(0.0699,0.209]",1691,0.0955,0.02324,0.07863,0.2956
+decile of the gene's own coefficient,"[-0.59,-0.135]",1691,-0.1755,0.02241,0.04735,0.4734
+decile of the gene's own coefficient,"(-0.135,-0.0857]",1690,-0.1081,0.01625,0.03686,0.441
+decile of the gene's own coefficient,"(-0.0857,-0.0475]",1690,-0.0659,0.01425,0.03547,0.4017
+decile of the gene's own coefficient,"(-0.0475,-0.0148]",1690,-0.0307,0.01287,0.03606,0.3569
+decile of the gene's own coefficient,"(-0.0148,0.0145]",1690,-0.0007,0.01269,0.03621,0.3505
+decile of the gene's own coefficient,"(0.0145,0.0463]",1690,0.0304,0.0128,0.03636,0.352
+decile of the gene's own coefficient,"(0.0463,0.0811]",1690,0.0631,0.01298,0.04012,0.3236
+decile of the gene's own coefficient,"(0.0811,0.122]",1690,0.1002,0.01327,0.04446,0.2985
+decile of the gene's own coefficient,"(0.122,0.18]",1690,0.1488,0.01484,0.05465,0.2716
+decile of the gene's own coefficient,"(0.18,0.502]",1691,0.2307,0.02283,0.07237,0.3155

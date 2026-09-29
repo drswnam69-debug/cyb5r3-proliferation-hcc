@@ -1,0 +1,17 @@
+quantity,value
+genes,10861
+gamma,0.2166
+correlation of observed with predicted,0.9056
+variance of observed explained by predicted,0.8201
+slope of observed on predicted,0.8669
+intercept of observed on predicted,-0.00007
+median residual,0.00016
+interquartile range of the residual,0.01839
+median absolute residual,0.00917
+median absolute observed shift,0.02848
+median absolute residual as a share of the observed,0.3222
+variance explained after adding the gene's own coefficient,0.8375
+residual per unit of the gene's own log hazard ratio,0.0531
+lower confidence limit,0.0509
+upper confidence limit,0.0554
+Stage G non-collapsibility inflation minus one,0.0643

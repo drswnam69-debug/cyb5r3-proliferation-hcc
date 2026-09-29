@@ -1,0 +1,13 @@
+rule,value
+status,"POST HOC, designed 2026-09-29 after the registered test was seen"
+designed_on,2026-09-29
+question,"how much of the per-gene shift does the first-order omitted variable expression account for, and what is left over"
+gamma,the log hazard ratio of the standardized proliferation score in a Cox model containing the score and the covariates but no gene
+delta,"the coefficient of the standardized gene in an ordinary least squares regression of the standardized score on that gene and the same covariates, obtained by the Frisch-Waugh-Lovell residual form so that it is exact rather than iterative"
+prediction,predicted log shift = -gamma * delta
+residual,residual = observed log shift - predicted log shift
+primary_reading,"if the predicted value explains at least 0.95 of the variance of the observed shift and the regression of observed on predicted has a slope within 0.05 of 1, the first-order expression is an adequate description and the departure is second order"
+secondary_reading,"if the residual is proportional to the gene's own log hazard ratio with a coefficient close to the non-collapsibility inflation estimated independently in Stage G (0.064), then what the expression omits is non-collapsibility and the two analyses agree by different routes"
+failure_reading,"if neither holds, the departure is not explained by either account and is reported as unexplained"
+bins,deciles of the predicted shift and of the gene's own log hazard ratio
+cohorts,"TCGA-LIHC, and GSE14520 where the objects from Stage F are present"

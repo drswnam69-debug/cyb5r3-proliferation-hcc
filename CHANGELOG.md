@@ -1,23 +1,99 @@
 # Changelog
 
-## v2.1.0 - 2026-09-29
+## v2.3.0 - 2026-09-30
 
-A figure-format release. No analysis, no decision rule and no reported number
-changed. Every result file in this release, including the three the two figure
-scripts rewrite on each run, is byte-identical to v2.0.0.
+One analysis was added, in answer to an objection raised during pre-submission
+review: that the landscape is a re-expression of the fitted model rather than a
+measurement of anything. Nothing else changed. No model, no decision rule and no
+estimate from an earlier stage was altered, and every number the earlier releases
+hold is reproduced by this one.
+
+Added:
+
+- `analysis/36_approximation.R`, Stage O, post hoc. How much of the per-gene
+  shift the first-order omitted variable expression accounts for, and what is
+  left over. For each gene the expression predicts the log shift as minus the log
+  hazard ratio of the proliferation score times the coefficient of the gene in a
+  regression of the score on that gene and the same covariates, obtained in
+  Frisch-Waugh-Lovell residual form so that it is exact for all 16,902 genes at
+  once rather than iterative. Three readings were fixed before the fits were seen
+  and are written to `CO00` on every run: the expression is an adequate
+  description if it explains at least 0.95 of the variance of the observed shift
+  with a slope within 0.05 of one; what it omits is non-collapsibility if the
+  remainder is proportional to the gene's own log hazard ratio with a coefficient
+  close to the independent Stage G estimate of 0.064; if neither holds, the
+  departure is reported as unexplained. Results `CO00` to `CO06`.
+
+Both pre-specified readings failed. In TCGA-LIHC the prediction explains 0.8386
+of the variance of the observed shift with a slope of 0.8968, short of both
+adequacy thresholds, and the remainder rises with the gene's own log hazard ratio
+at 0.0977 per unit (0.0945 to 0.1010), which is not the 0.0643 that
+non-collapsibility alone would give. GSE14520 behaves the same way: 0.8201 of the
+variance, a slope of 0.8669, and 0.0531 per unit (0.0509 to 0.0554). Adding the
+gene's own coefficient to the prediction raises the variance explained only to
+0.8594 and 0.8375. The departure is therefore reported as unexplained by either
+account, which is the informative outcome: the objection is right about the slope
+of the landscape and wrong about the per-gene shift, which carries something
+neither the first-order expression nor non-collapsibility accounts for.
+
+The ratio of the remainder coefficient to the proliferation log hazard ratio is
+0.260 (0.252 to 0.269) in TCGA-LIHC and 0.245 (0.235 to 0.256) in GSE14520. That
+regularity is recorded as an observation for a later test and not as a result.
+
+Analyses ran under R 4.6.1 with survival 3.8-6.
+
+## v2.2.0 - 2026-09-29
+
+A reporting and provenance release, prepared during a full pre-submission audit
+of the manuscript. No model, no decision rule and no estimate changed. What
+changed is which cohorts the primary analysis uses, and how much of what the
+manuscript quotes can be checked against a result file.
+
+The confirmatory set. The registered rule was applied to the cohorts as The
+Cancer Genome Atlas distributes them, and that distribution contains aggregate
+cohorts alongside single-organ ones. Ten cohorts met the rule, but COADREAD is
+COAD together with rectal adenocarcinoma and LUNG is LUSC together with LUAD, so
+the ten covered only eight disjoint groups of patients. Rectal adenocarcinoma had
+been excluded on its own for having 84 patients and lung adenocarcinoma had been
+excluded by name, and each re-entered inside an aggregate. The primary analysis
+is now the eight cohorts in which no patient appears twice, with the original ten
+reported as a sensitivity analysis. Neither registered hypothesis changes verdict:
+the slope is negative in four of eight and five of ten, against a refutation
+threshold of 0.75, and the median pairwise agreement is -0.268 and -0.293 against
+a refutation threshold of 0.10. This departure from the registered set was
+identified after the analysis had been run and is labeled post hoc.
 
 Changed:
 
-- `analysis/28_figure6.R` and `analysis/32_figure_prereg.R` now write their
-  figures at 170 mm rather than 175 mm, which is the full text width of the
-  journal the manuscript is now submitted to. The figures in `figures/` were
-  regenerated at that width and the exported EPS files were rebuilt from the
-  SVG through `rsvg-convert` and Ghostscript, because `cairo_ps()` is not
-  available on the analysis machine and the `postscript()` fallback clips text.
+- `analysis/26_genomewide.R` now records the analysis set of each sweep. The
+  discovery sweep adjusts for histologic grade, so it is fitted in the 339
+  patients with a recorded grade, among whom there are 114 deaths, and not in the
+  341 of the cohort. `CF03` and `CF08` carry those counts, and `CF08` now also
+  carries the slope standard error and the variance explained, so the GSE14520
+  R-squared of 0.7959 that the manuscript quotes no longer exists only inside a
+  figure subtitle.
+- `analysis/27_sweep_refine.R` records the size of the Hoshida-restricted
+  HALLMARK_G2M_CHECKPOINT score, 172 genes, in `CG06`.
+- `analysis/33_score_validity.R` records the size of the hallmark comparison set,
+  195 genes, in the new `CL04`.
+- `analysis/28_figure6.R` writes the slope, its standard error and the variance
+  explained for both landscape panels to the new `CF11`, and draws at 170 mm.
+- `analysis/32_figure_prereg.R` marks the two aggregate cohorts apart from the
+  eight primary ones in both panels, fits panel B to the primary eight, and
+  reports the regression for four sets in `CK02`: the primary eight, the
+  registered ten, the eight with the three exploratory cohorts, and all thirteen.
+  It draws at 170 mm.
+- Both figures were regenerated and their EPS files rebuilt from the SVG through
+  `rsvg-convert` and Ghostscript, because `cairo_ps()` is unavailable on the
+  analysis machine and the `postscript()` fallback clips text.
 
-Unchanged and reconfirmed on this run: `CF10` (2308, 1333, 338, 1) and `CK02`
-(registered Pearson r -0.9876, coefficient -0.9559, intercept -0.0077; all
-thirteen cohorts r -0.9916; sign concordance 13 of 13).
+Reproduced unchanged on this run: the discovery slope -0.2782 with R-squared
+0.7851 over 16,902 genes, the GSE14520 slope -0.1798 over 10,861 genes, the
+threshold counts 2308, 1333, 338 and 1, the reversal fractions 18.24 and 3.74
+percent, the null band of 2963 genes with an inflation of 0.0643 per unit
+coefficient, and every cohort-level estimate in `CJ03` and `CI02`.
+
+Analyses ran under R 4.6.1 with survival 3.8-6.
 
 ## v2.0.0 — 2026-09-23
 

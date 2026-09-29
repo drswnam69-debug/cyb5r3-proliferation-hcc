@@ -1,0 +1,4 @@
+script : 36_approximation
+run at : 2026-09-30 06:53:24 KST
+R      : R version 4.6.1 (2026-06-24)
+seed   : 20260817

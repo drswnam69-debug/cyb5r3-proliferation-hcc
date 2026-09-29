@@ -6,8 +6,8 @@ authors:
     given-names: "Soon Woo"
     orcid: "https://orcid.org/0000-0001-5562-4775"
     affiliation: "Hepatobiliary Unit, Division of Gastroenterology, Department of Internal Medicine, Incheon St. Mary's Hospital, College of Medicine, The Catholic University of Korea, Seoul, Republic of Korea"
-version: "2.1.0"
-date-released: "2026-09-29"
+version: "2.3.0"
+date-released: "2026-09-30"
 license: MIT
 keywords:
   - prognostic biomarkers
@@ -38,3 +38,6 @@ abstract: >-
   every exploratory and post hoc analysis labeled in the code and in the output.
   A survey of 50 recent prognostic gene expression papers, drawn under a fixed
   seed, records how often such studies adjust for proliferation at all.
+  A post hoc analysis asks how much of the per-gene shift the first-order omitted
+  variable expression accounts for; neither of the two readings fixed in advance
+  holds, and the remainder is reported as unexplained by either account.
